@@ -50,7 +50,23 @@ Encryption Strength: Even when strong underlying encryption standards, overall f
 Defense-in-Depth: Organizations should enforce strict password complexity policies, implement multi-factor access controls, and avoid sharing sensitive documents protected by easily guessable credentials.
 
 
-
  LIABITITY DISCLAIMER!
-The tools, techniques, and methodologies detailed in this repository are intended for educational purposes, authorized security testing, and completion of coursework for the Networkwalks Cybersecurity program. The author assumes no liability for the misuse of this information.*
+The tools, techniques, and methodologies detailed in this repository are intended for educational purposes, authorized security testing, and completion of coursework for the Networkwalks Cybersecurity program. The author assumes no liability for the misuse of this information.
+
+
+Linkedin: www.linkedin.com/in/alfred-owino-a4a34021b
+
+Project Information
+
+Program Name: Cybersecurity at Networkwalks Week:03 Project: Cybersecurity & Pentesting Lab Setup 
+
+Repository:GitHub
+
+Releases: No releases 
+
+Published Contributor: One(1) Alfred Owino (Cybersecurity Intern) 
+
+
+
+
   
