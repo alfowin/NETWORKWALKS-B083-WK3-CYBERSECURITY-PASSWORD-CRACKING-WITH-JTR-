@@ -1,68 +1,7 @@
 # NETWORKWALKS-B083-WK3-CYBERSECURITY-PASSWORD-CRACKING-WITH-JTR-
 Password Cracking with JTR
 
-The primary focus of this assignment was to understand the cryptographic mechanisms protecting encrypted document formats (PDFs), identify hash structures, and execute offline brute-force and dictionary-based password cracking attacks using *John the Ripper* (via the *Johnny* graphical user interface)[span_1](start_span)[span_1](end_span)[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span). 
-
----
-
-## Lab Environment & Objectives
-* *Primary Objective:* Successfully recover known and unknown passwords protecting three separate target PDF files and extract the embedded confirmation flags[span_4](start_span)[span_4](end_span)[span_5](start_span)[span_5](end_span).
-* *Operating System:* Windows host environment / Security lab utility suite[span_6](start_span)[span_6](end_span)[span_7](start_span)[span_7](end_span)[span_8](start_span)[span_8](end_span).
-* *Tools Utilized:* 
-  * *Johnny / John the Ripper:* Password cracking framework used for hash identification and dictionary/brute-force execution[span_9](start_span)[span_9](end_span)[span_10](start_span)[span_10](end_span)[span_11](start_span)[span_11](end_span).
-  * *PDF Reader:* For validating successful decryption and viewing flag artifacts[span_12](start_span)[span_12](end_span).
-
----
-
-## Methodology & Technical Workflow
-
-### 1. Hash Identification and Extraction
-When dealing with password-protected PDF files, modern security tools cannot attack the document directly through raw plaintext guesses at scale. Instead, the process involves:
-* Inspecting the target PDF to evaluate its encryption standard (e.g., standard security handler, RC4, or AES encryption).
-* Extracting the internal document hash format compatible with offline cracking tools. In this lab, the target hashes matched standard John the Ripper PDF parsing syntax (pdf$4*4*128*...)[span_13](start_span)[span_13](end_span)[span_14](start_span)[span_14](end_span)[span_15](start_span)[span_15](end_span).
-
-### 2. Attack Execution (Dictionary / Brute-Force)
-Using *Johnny*, the extracted hashes were loaded into the workspace interface[span_16](start_span)[span_16](end_span)[span_17](start_span)[span_17](end_span)[span_18](start_span)[span_18](end_span):
-* Configured attack parameters to match target file signatures[span_19](start_span)[span_19](end_span)[span_20](start_span)[span_20](end_span)[span_21](start_span)[span_21](end_span).
-* Applied targeted wordlists and rule sets designed to evaluate alphanumeric and symbolic variations.
-* Monitored the cracking process until a 100% success rate was achieved across all target files[span_22](start_span)[span_22](end_span)[span_23](start_span)[span_23](end_span)[span_24](start_span)[span_24](end_span).
-
----
-
-## Results & Findings
-
-| Target File | Attack Method | Recovered Password | Status |
-| :--- | :--- | :--- | :--- |
-| *PDF Target 1* | Dictionary / Wordlist Match | good-luck[span_25](start_span)[span_25](end_span) | Cracked[span_26](start_span)[span_26](end_span) |
-| *PDF Target 2* | Cryptanalytic/Pattern Assessment | password1[span_27](start_span)[span_27](end_span) | Cracked[span_28](start_span)[span_28](end_span) |
-| *PDF Target 3* | Complex Character Mapping | 1qaz2wsx[span_29](start_span)[span_29](end_span) | Cracked[span_30](start_span)[span_30](end_span) |
-
-Upon successful recovery, each password was used to decrypt its respective PDF file, revealing the confirmation flags (e.g., nw{cybersecurity_flag_captured_2608})[span_31](start_span)[span_31](end_span).
-
----
-
-## Visual Evidence / Screenshots
-
-* *Figure 1: Successful password recovery for Target 1 (good-luck)*
-  ![PDF 1 Cracked Password](331996.jpg)[span_32](start_span)[span_32](end_span)
-
-* *Figure 2: Successful password recovery for Target 2 (password1)*
-  ![PDF 2 Cracked Password](332000.jpg)[span_33](start_span)[span_33](end_span)
-
-* *Figure 3: Successful password recovery for Target 3 (1qaz2wsx)*
-  ![PDF 3 Cracked Password](332006.jpg)[span_34](start_span)[span_34](end_span)
-
-* *Figure 4: Final Flag Verification and Document Unlocking (nw{cybersecurity_flag_captured_2608})*
-  ![Flag Captured](331114.jpg)[span_35](start_span)[span_35](end_span)
-
----
-
-## Key Security Takeaways & Mitigation
-* *Weak Passwords:* Passwords such as password1 or simple predictable strings are vulnerable to rapid dictionary and wordlist-based offline attacks.
-* *Encryption Strength:* Even when strong underlying encryption standards (like AES) are used, overall file security is entirely dependent on the entropy and length of the user-chosen password.
-* *Defense-in-Depth:* Organizations should enforce strict password complexity policies, implement multi-factor access controls, and avoid sharing sensitive documents protected by easily guessable credentials.
-
----
-
-## Liability Disclaimer
-> *Disclaimer:* The tools, techniques, and methodologies detailed in this repository are intended solely for educational purposes, authorized security testing, and completion of coursework for the Networkwalks Cybersecurity program. The author assumes no liability for the misuse of this information.
+NETWORKWALKS-B083-WK3-CYBERSECURITY--PENETRATION-TESTING-REPORT-PDF-PASSWORD-CRACKING-JOHN-THE-RIPPER-JOHNNYField DetailsFieldDetailsPentester NameAlfred OwinoProgram / BatchB083 - Networkwalks Cybersecurity InternshipDate23 September 2026Modules CompletedW3-PM1 (PDF Hash Extraction via pdf2john), W3-PM2 (Offline Password Auditing via Johnny GUI)Client / TargetSelf-created password-protected PDF document (Authorized lab environment)Permission Secured?Yes (Self-owned test file / Authorized lab environment)Phases CoveredPhase 1: Hash Extraction & PreparationPhase 2: Dictionary/Wordlist Attack ExecutionPhase 3: Password Recovery & Validation1. LIABILITY DISCLAIMERI have performed these password auditing and hash-cracking activities strictly on files and systems that I own or where explicit written permission was obtained for research and practical training. All material contained within this document is intended solely for educational, compliance, and security research purposes. The authors and Networkwalks are not responsible for actions taken using knowledge derived from this report. Unauthorized password cracking or access to protected documents is illegal under cybercrime legislation worldwide and can result in severe criminal penalties, heavy financial fines, termination of employment, and a permanent criminal record.2. INTRODUCTIONThis report details the Week 3 practical lab project for the Networkwalks Cybersecurity & Ethical Hacking Internship Program. The objective of this exercise is to demonstrate offline password recovery against an encrypted PDF file using John the Ripper integrated with the Johnny graphical user interface (GUI).In modern cybersecurity assessments, evaluating the strength of document encryption and user authentication credentials is a core component of defensive hardening. Weak or predictable passwords used on encrypted documents leave confidential data vulnerable to offline brute-force and dictionary attacks. This project outlines the process of extracting the cryptographic hash from an encrypted PDF using pdf2john, configuring the attack within the Johnny GUI, executing a dictionary attack using a standard wordlist (rockyou.txt), and analyzing the security risks associated with weak file passwords.3. TOOLS USEDToolPurposeKali LinuxPrimary operating system for password auditing and security analysis.pdf2john (Perl/Python Script)Helper utility used to extract the encrypted hash format from a password-protected PDF file.John the Ripper (JtR)High-performance offline password recovery engine.Johnny GUIGraphical front-end for John the Ripper, simplifying session management, hash loading, and attack configuration.rockyou.txtStandard dictionary wordlist used for wordlist/dictionary-based password cracking.4. ACTIVITIES PERFORMED4.1 Hash Extraction (pdf2john)Before John the Ripper can perform offline cracking on a password-protected PDF file, the cryptographic parameters and encrypted hash stored in the PDF header must be extracted into a compatible format.Target File Preparation: A sample encrypted file named confidential_report.pdf was created with user-level password protection.Command Execution: Using the Kali Linux terminal, the pdf2john script was executed to dump the hash into a text file (pdf_hash.txt):Bashpdf2john confidential_report.pdf > pdf_hash.txt
+Observation: The resulting pdf_hash.txt contained the extracted hash prefix ($pdf$1*...), identifying the encryption revision, key length, and salted hash structure without modifying the original document.4.2 GUI Configuration and Session Setup (Johnny)Once the hash file was prepared, the Johnny interface was launched to manage the password cracking workflow visually.Launching Johnny: Opened the terminal and executed:Bashjohnny
+Importing the Hash File: Navigated to the Open Passwd File / Import Hashes option within Johnny and selected pdf_hash.txt.Format Verification: Johnny automatically parsed the imported hash and recognized the format as a PDF document hash managed by John the Ripper's pdf format plugin.4.3 Wordlist Attack ExecutionWith the hash loaded into Johnny, the attack mode and dictionary were configured to perform an offline dictionary attack:Wordlist Selection: Under the Options / Attack Modes tab in Johnny, the attack mode was set to Wordlist. The standard wordlist path /usr/share/wordlists/rockyou.txt was selected.Execution: Clicked the Start Session / Start Attack button in Johnny to launch the underlying John the Ripper process.Process Monitoring: Johnny displayed real-time metrics, including candidate testing speed (hashes per second) and estimated completion time.4.4 Result VerificationWithin a few seconds of execution, John the Ripper successfully matched a candidate phrase from the dictionary against the extracted PDF key.Password Recovered: Johnny updated the main session panel to display the recovered plaintext password next to the hash entry: secr3t123.Command-Line Double Check: To confirm the result outside the GUI, the following command was run in the terminal:Bashjohn --show pdf_hash.txt
+Access Validation: The plaintext password secr3t123 was entered into the original confidential_report.pdf file, successfully granting full access to the document contents.5. RISK ANALYSIS / IMPACT#Risk / FindingEvidence / ObservationPotential ImpactRisk Level1Weak PDF Document PasswordPassword recovered in under 5 seconds using standard dictionary (rockyou.txt).Unauthorized users can easily bypass document restrictions and view sensitive contents.High ●2Offline Hash Extraction Possiblepdf2john extracted hash parameters without requiring authorization or triggering alerts.Attackers can copy protected PDFs offsite and perform brute-force attempts without detection.Medium ●3Legacy Encryption Revision UsedPDF used standard RC4/AES-128 bit key generation with fast hash computation.Allows rapid hash candidate processing rates (thousands to millions of guesses per second).Medium ●Risk Level Key: Red ● High | Orange ● Medium | Yellow ● LowNote: These findings highlight password complexity weaknesses rather than software flaws in the PDF format itself. Because offline cracking operates locally on the extracted hash, anti-lockout mechanisms (such as account lockouts or rate limiting) do not apply.6. RECOMMENDATIONSEnforce High-Entropy Passphrases: PDF passwords should be at least 16 characters in length, combining uppercase and lowercase letters, numbers, and symbols to resist wordlist and mask attacks.Upgrade PDF Security/Encryption Settings: Use modern PDF encryption standards (such as AES-256 bit encryption under PDF v1.7 / Acrobat X or higher), which significantly increase the computational cost of hash verification.Implement Enterprise Rights Management (DRM): For highly sensitive corporate documents, rely on centralized Information Rights Management (IRM) or digital rights solutions rather than static password protection alone.Avoid Dictionary Words and Common Patterns: Do not base document passwords on common dictionary words, simple character replacements (e.g., s to $), or predictable sequences.Restrict Physical and Network Document Access: Prevent unauthorized downloading or exfiltration of sensitive encrypted files so threat actors cannot perform offline cracking attempts.7. CONCLUSIONDuring Week 3 of the Networkwalks Cybersecurity & Ethical Hacking Internship, I completed practical activities covering offline password cracking against encrypted PDF files using John the Ripper and the Johnny GUI.The practical workflow demonstrated how an offline attack progresses in three distinct stages: extracting the cryptographic hash with pdf2john, loading and configuring the attack within Johnny, and running a targeted wordlist attack against the target hash. The quick recovery of the demonstration password reinforces a fundamental security principle: encryption is only as strong as the underlying password powering it. Because offline attacks occur locally on the analyst's hardware without interacting with a server, security teams cannot rely on rate-limiting or lockout mechanisms to protect weakly encrypted documents. Implementing strong, complex passphrases and modern AES-256 PDF encryption standards remains essential for maintaining document confidentiality.
