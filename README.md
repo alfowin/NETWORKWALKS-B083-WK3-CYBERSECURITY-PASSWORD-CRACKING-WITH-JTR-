@@ -11,10 +11,8 @@ Password Cracking with JTR
 | Permission Secured? | Yes (Assignment) |
 | Phases Covered | Phase 1: Hash Extraction<br> Phase 2:Attack /Execution<br>Phase 3: Password Recovery 
 
-1. LIABILITY DISCLAIMER
-I cracked the password for this file with permission from my instructor and it was for training and educational purposes.Unauthorised Password cracking is illegal and may result in legal action, disciplinary consequences or other penalties.
 
-2. OBJECTIVES
+ OBJECTIVES
 Primary Objective: Successfully recover known and unknown passwords protecting three separate target PDF files and extract the embedded confirmation flags
 Operating System: Windows host environment / Security lab utility suite.
 
@@ -42,4 +40,17 @@ Using Johnny, the extracted hashes were loaded into the workspace interface and 
 | PDF Target 3 | `1qaz2wsx` | Cracked |
 
 Upon successful recovery, each password was used to decrypt its respective PDF file, revealing the confirmation in the encrypted file.
+
+KEY SECURITY TAKEAWAY
+
+Weak Passwords:  Passwords such as `password1` or simple predictable strings are vulnerable to rapid dictionary and wordlist-based offline attacks.
+
+Encryption Strength: Even when strong underlying encryption standards, overall file security is entirely dependent on the entropy and length of the user-chosen password.
+
+Defense-in-Depth: Organizations should enforce strict password complexity policies, implement multi-factor access controls, and avoid sharing sensitive documents protected by easily guessable credentials.
+
+
+
+ LIABITITY DISCLAIMER!
+The tools, techniques, and methodologies detailed in this repository are intended for educational purposes, authorized security testing, and completion of coursework for the Networkwalks Cybersecurity program. The author assumes no liability for the misuse of this information.*
   
